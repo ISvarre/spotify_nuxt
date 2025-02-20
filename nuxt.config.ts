@@ -19,4 +19,13 @@ export default defineNuxtConfig({
   css: [
     '~/assets/css/main.scss'
   ],
+  runtimeConfig: {
+    spotify: {
+      clientId: '',
+      clientSecret: ''
+    },
+    public: {
+
+    }
+  }
 });
