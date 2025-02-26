@@ -12,13 +12,13 @@
   "dependencies": {
     "@nuxtjs/auth-next": "5.0.0-1667386184.dfbbb54",
     "@nuxtjs/composition-api": "^0.34.0",
-    "@types/node": "^22.13.4",
+    "@types/node": "^22.13.5",
     "axios": "^1.7.9",
     "consola": "^3.4.0",
     "defu": "^6.1.4",
     "dotenv": "^16.4.7",
     "nuxt": "^3.15.4",
-    "sass": "^1.85.0",
+    "sass": "^1.85.1",
     "vue": "latest",
     "vue-router": "latest"
   },
