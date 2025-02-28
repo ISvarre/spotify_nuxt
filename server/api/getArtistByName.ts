@@ -1,23 +1,27 @@
 import axios from "axios";
-import {getQuery} from "h3";
+import { getQuery } from "h3";
+import {fetchSpotifySession, getSession} from "~/utils/session";
 
 export default defineEventHandler(async (event) => {
     try {
-        const authResponse = await $fetch('/api/auth')
+        let token = await getSession();
 
-        const type  = "artist"
+        // If token is not present, fetch a new one
+        if (!token) {
+            token = await fetchSpotifySession();
+        }
 
+        const type = "artist";
         const query = getQuery(event);
-        console.log('query:', query)
 
         const response = await axios.get(`https://api.spotify.com/v1/search?q=artist:${query?.['name']}&type=${type}&limit=10`, {
             headers: {
-                'Authorization': `Bearer ${authResponse.access_token}`
-            }
-        })
-        return response.data
+                'Authorization': `Bearer ${token}`,
+            },
+        });
+        return response.data;
     } catch (error) {
-        console.error('Error fetching artist:', error)
-        throw error
+        console.error('Error fetching artist:', error);
+        throw error;
     }
-})
+});

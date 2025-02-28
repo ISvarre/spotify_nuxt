@@ -1,4 +1,3 @@
-<!-- ArtistCard.vue -->
 <template>
   <a :href="artist.external_urls.spotify" target="_blank">
     <div class="bg-white rounded-xl shadow-lg overflow-hidden">
