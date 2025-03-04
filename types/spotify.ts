@@ -4,3 +4,15 @@ export interface Artist {
     followers: { total: number }
     external_urls: { spotify: string }
 }
+
+export interface Track {
+    id: string;
+    name: string;
+    album: {
+        images: { url: string }[];
+    };
+    external_urls: {
+        spotify: string;
+    };
+    artists: { name: string }[];
+}

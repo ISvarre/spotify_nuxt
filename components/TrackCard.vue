@@ -1,9 +1,9 @@
 <template>
-  <a :href="`/${artist.id}`" target="_blank" class="max-w-[250px]">
+  <a target="_blank" class="max-w-[250px]">
     <div class="bg-white rounded-xl shadow-lg overflow-hidden h-full">
       <div class="relative h-48">
         <img
-            :src="artist.images[0]?.url"
+            :src="track.album.images[0]?.url"
             alt="Artist Image"
             class="w-full h-full object-cover"
         />
@@ -11,20 +11,17 @@
       </div>
       <div class="p-4 h-full">
         <h2 class="text-xl font-bold text-gray-900 mb-2">
-          {{ artist.name }}
+          {{ track.name }}
         </h2>
-        <p class="text-sm text-gray-600">
-          {{ artist.followers?.total?.toLocaleString() }} followers
-        </p>
       </div>
     </div>
   </a>
 </template>
 
 <script setup lang="ts">
-import type {Artist} from "~/types/spotify";
+import type {Track} from "~/types/spotify";
 
 defineProps<{
-  artist : Artist
+  track : Track
 }>()
 </script>

@@ -11,10 +11,9 @@ export default defineEventHandler(async (event) => {
             token = await fetchSpotifySession();
         }
 
-        const type = "artist";
         const query = getQuery(event);
 
-        const response = await axios.get(`https://api.spotify.com/v1/search?q=artist:${query?.['name']}&type=${type}&limit=20`, {
+        const response = await axios.get(`https://api.spotify.com/v1/artists/${query?.['id']}/top-tracks`, {
             headers: {
                 'Authorization': `Bearer ${token}`,
             },
