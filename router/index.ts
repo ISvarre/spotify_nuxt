@@ -1,10 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '~/pages/index.vue'
-import Artist from '~/pages/[id].vue'
+import ArtistId from '~/pages/artist-[id].vue'
 
 const routes = [
     { path: '/', component: Home },
-    { path: '/artist/:id', component: Artist }
+    { path: '/artist/:id', component: ArtistId }
 ]
 
 const router = createRouter({

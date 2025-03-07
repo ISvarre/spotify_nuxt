@@ -1,5 +1,5 @@
 <template>
-  <a :href="`/${artist.id}`" target="_blank" class="max-w-[250px]">
+  <a :href="`/artist-${artist.id}`" target="_blank" class="max-w-[250px]">
     <div class="bg-white rounded-xl shadow-lg overflow-hidden h-full">
       <div class="relative h-48">
         <img

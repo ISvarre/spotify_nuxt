@@ -1,27 +1,24 @@
 <template>
-  <a target="_blank" class="max-w-[250px]">
-    <div class="bg-white rounded-xl shadow-lg overflow-hidden h-full">
-      <div class="relative h-48">
-        <img
-            :src="track.album.images[0]?.url"
-            alt="Artist Image"
-            class="w-full h-full object-cover"
-        />
-        <div class="absolute inset-0 bg-gradient-to-b from-black/60 to-transparent" />
-      </div>
-      <div class="p-4 h-full">
-        <h2 class="text-xl font-bold text-gray-900 mb-2">
-          {{ track.name }}
-        </h2>
-      </div>
-    </div>
-  </a>
+  <div class="track-card">
+    <img :src="track.album.images[0].url" alt="Album cover" />
+    <div>{{ track.name }}</div>
+    <div>{{ track.artists.map(artist => artist.name).join(', ') }}</div>
+  </div>
 </template>
 
 <script setup lang="ts">
-import type {Track} from "~/types/spotify";
+import type { Track } from '~/types/spotify';
 
-defineProps<{
-  track : Track
-}>()
+defineProps<{ track: Track }>();
 </script>
+
+<style scoped>
+.track-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+}
+</style>

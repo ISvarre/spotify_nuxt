@@ -15,4 +15,5 @@ export interface Track {
         spotify: string;
     };
     artists: { name: string }[];
+    uri: string;
 }

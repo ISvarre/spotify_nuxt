@@ -26,5 +26,12 @@ export default defineNuxtConfig({
     public: {
 
     }
+  },
+  app: {
+    head: {
+      script: [
+        {src: 'https://sdk.scdn.co/spotify-player.ts'}
+      ]
+    }
   }
 });
