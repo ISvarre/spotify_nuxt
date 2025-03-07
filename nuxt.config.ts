@@ -1,4 +1,11 @@
 export default defineNuxtConfig({
+  app: {
+    head: {
+      script: [
+        {src: 'https://sdk.scdn.co/spotify-player.js'}
+      ]
+    }
+  },
   compatibilityDate: "2024-11-01",
   devtools: { enabled: false },
   modules: [
@@ -25,13 +32,6 @@ export default defineNuxtConfig({
     },
     public: {
 
-    }
-  },
-  app: {
-    head: {
-      script: [
-        {src: 'https://sdk.scdn.co/spotify-player.ts'}
-      ]
     }
   }
 });

@@ -1,8 +1,8 @@
 <template>
   <div class="flex flex-col justify-center items-center gap-4 py-4">
-    <SpotifyPlayer />
+    <h1 class="font-bold text-3xl"> Top Tracks </h1>
     <div v-if="topTracks" class="bg-white p-4 rounded-lg shadow-lg h-full">
-      <div class="grid grid-cols-3 gap-4 overflow-y-auto w-full px-2 pb-15">
+      <div class="grid grid-cols-5 gap-4 overflow-y-auto w-full px-2 pb-15">
         <TrackCard v-for="track in topTracks" :key="track.id" :track="track" />
       </div>
     </div>
